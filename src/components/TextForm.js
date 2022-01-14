@@ -6,11 +6,18 @@ export default function TextForm(props) {
     // console.log('Uppercase was clicked');
     let newText = text.toUpperCase();
     setText(newText);
+    props.alertDispaly("Converted to uppercase!","success")
   };
   const handleLoClick = () => {
     // console.log('Uppercase was clicked');
     let newText = text.toLowerCase();
     setText(newText);
+    props.alertDispaly("Converted to lowercase!","success")
+  };
+  const handleClClick = () => {
+    let newText = '';
+    setText(newText);
+    props.alertDispaly(" Text is cleared","success")
   };
   const handleOnChange = (event) => {
     // console.log('On Change');
@@ -20,7 +27,7 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div clsaaName="container">
+      <div className="container"  style= {{color: props.mode==='light'?'black':'white'}}>
         <h5>{props.heading}</h5>
         <div className="mb-3">
           <textarea
@@ -28,24 +35,28 @@ export default function TextForm(props) {
             id="myBox"
             value={text}
             rows="8"
+            style= {{backgroundColor: props.mode==='light'?'white':'#395e65', color: props.mode==='light'?'black':'white' }}
             onChange={handleOnChange}
           ></textarea>
         </div>
         <button className="btn btn-primary mx-2" onClick={handleUpClick}>
-          Convert to UpperCase
+          UpperCase Text
         </button>
         <button className="btn btn-primary mx-2" onClick={handleLoClick}>
-          Convert to LowerCase
+          LowerCase text
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleClClick}>
+          Clear text
         </button>
       </div>
-      <div className="container my-3">
+      <div className="container my-3"  style= {{color: props.mode==='light'?'black':'white'}}>
         <h6> Your Text Summary</h6>
         <p>
-          {text.split(' ').length - 1} words and {text.length} charecters
+          {text.length===0? text.length: text.split(' ').length} words and {text.length} charecters
         </p>
-        <p>{0.008 * (text.split(' ').length - 1)} Minutes Reading time</p>
+        <p>{0.008 * (text.split(' ').length)} Minutes Reading time</p>
         <h3> Preview</h3>
-        <p>{text}</p>
+        <p>{text.length>0?text:"Enter something in the textbox abouve to preview it here"}</p>
       </div>
     </>
   );
