@@ -1,35 +1,44 @@
 import React, {useState} from 'react'
 
-export default function About() {
-    const [myStyle, setMyStyle] = useState({
-        backgroundColor : 'White',
-        color : 'Black'
-        })
+export default function About(props) {
+    // const [myStyle, setMyStyle] = useState({
+    //     backgroundColor : 'White',
+    //     color : 'Black'
+    //     })
     
-    const [btnText, setBtnText] = useState("Enable Dark Mode")
+    // const [btnText, setBtnText] = useState("Enable Dark Mode")
 
     
-    const toggleStyle = () => {
-        if(myStyle.backgroundColor === 'White'){
-            setMyStyle({
-                backgroundColor : 'Black',
-                color : 'tomato',
-            })
-            setBtnText("Enable Light Mode")
-        }
-        else{
-            setMyStyle({
-                backgroundColor : 'White',
-                color : 'Black'
-            })
-            setBtnText("Enable Dark Mode")
-        }
-    }
+    // const toggleStyle = () => {
+    //     if(myStyle.backgroundColor === 'White'){
+    //         setMyStyle({
+    //             backgroundColor : 'Black',
+    //             color : 'tomato',
+    //         })
+    //         setBtnText("Enable Light Mode")
+    //     }
+    //     else{
+    //         setMyStyle({
+    //             backgroundColor : 'White',
+    //             color : 'Black'
+    //         })
+    //         setBtnText("Enable Dark Mode")
+    //     }
+    // }
      
     return (
-        <div className="container" style={myStyle}>
+        <div className="container my-5 " style= {{color: props.mode==='light'?'black':'white'}} >
+            {/* style={myStyle} */}
             <h2>About Us</h2>
-            <div className="accordion" id="accordionExample" >
+            <p>Welcome to the Texter. A very handy online text tool
+            where you can change between lower case and upper case letters, where you can check 
+            live word count, character count and reading time of your text. If you are wondering
+             how to uncapitalize text, this is exactly what the lower case text converter will allow 
+             you to do, it transforms all the letters in your text into lowercase letters. Simply 
+             copy the text that you need generating into lower case and paste the text into the box 
+             and select the ‘LowerCase Text’ Button, try same proccess for ‘Upper Case’ botton</p>
+            
+            {/* <div className="accordion" id="accordionExample" >
             <div className="accordion-item">
                 <h2 className="accordion-header" id="headingOne">
                 <button className="accordion-button" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -69,8 +78,8 @@ export default function About() {
             </div>
             </div>
             <div className="container my-3">
-                <button onClick={toggleStyle} type="button" class="btn btn-primary ">{btnText}</button>
-            </div>
+                <button onClick={toggleStyle} type="button" className="btn btn-primary ">{btnText}</button>
+            </div> */}
         </div>
     )
 }
