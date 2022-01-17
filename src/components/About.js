@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-
+import React from 'react'
+// {useState}
 export default function About(props) {
     // const [myStyle, setMyStyle] = useState({
     //     backgroundColor : 'White',
@@ -27,16 +27,31 @@ export default function About(props) {
     // }
      
     return (
-        <div className="container my-5 " style= {{color: props.mode==='light'?'black':'white'}} >
-            {/* style={myStyle} */}
-            <h2>About Us</h2>
-            <p>Welcome to the Texter. A very handy online text tool
-            where you can change between lower case and upper case letters, where you can check 
-            live word count, character count and reading time of your text. If you are wondering
-             how to uncapitalize text, this is exactly what the lower case text converter will allow 
-             you to do, it transforms all the letters in your text into lowercase letters. Simply 
-             copy the text that you need generating into lower case and paste the text into the box 
-             and select the ‘LowerCase Text’ Button, try same proccess for ‘Upper Case’ botton</p>
+
+        // <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+        // <div className="toast" style="position: absolute; top: 0; right: 0;">
+        //     <div className="toast-header">
+        //         <strong className="mr-auto">Bootstrap</strong>
+        //         <small>11 mins ago</small>
+        //         <button type="button" className="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        //             <span aria-hidden="true">&times;</span>
+        //         </button>
+        //       </div>
+        // <div className="toast-body">
+        // Hello, world! This is a toast message.
+        // </div>
+        // </div>
+        // </div>
+// <div className="container my-5 " style= {{color: props.mode==='light'?'black':'white'}} >
+        //     {/* style={myStyle} */}
+        //     <h2>About Us</h2>
+        //     <p>Welcome to the Texter. A very handy online text tool
+        //     where you can change between lower case and upper case letters, where you can check 
+        //     live word count, character count and reading time of your text. If you are wondering
+        //      how to uncapitalize text, this is exactly what the lower case text converter will allow 
+        //      you to do, it transforms all the letters in your text into lowercase letters. Simply 
+        //      copy the text that you need generating into lower case and paste the text into the box 
+        //      and select the ‘LowerCase Text’ Button, try same proccess for ‘Upper Case’ botton</p>
             
             {/* <div className="accordion" id="accordionExample" >
             <div className="accordion-item">
@@ -80,6 +95,6 @@ export default function About(props) {
             <div className="container my-3">
                 <button onClick={toggleStyle} type="button" className="btn btn-primary ">{btnText}</button>
             </div> */}
-        </div>
+        // </div>
     )
 }

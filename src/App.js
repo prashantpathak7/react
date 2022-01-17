@@ -2,14 +2,14 @@ import './App.css';
 import React, { useState } from 'react'
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import About from './components/About';
+//import About from './components/About';
 import Alert from './components/Alert';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+// } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -22,7 +22,7 @@ function App() {
     });
     setTimeout(() => {
       setAlert(null);
-    }, 1500 );
+    }, 2000 );
   }
   const toggleMode = () => {
     if(mode === 'light'){
@@ -37,20 +37,21 @@ function App() {
   }
   return (
     <>
-      <Router>
+      {/* <Router> */}
       <Navbar title="Texter" about="about us" mode={mode} toggleMode={toggleMode}/>
-      <Alert alert={alert} />
+        <Alert alert={alert} />
       <div className="container my-3">
-        <Switch>
-          <Route exact path="/About">
+        {/* <Switch> */}
+          {/* <Route exact path="/About">
             <About mode={mode} />
-          </Route>
-          <Route exact path="/">
+          </Route> */}
+          {/* <Route exact path="/"> */}
             <TextForm alertDisplay = {alertDispaly} heading="Type your text here" mode={mode} alert={alert} alertDispaly={alertDispaly}/>
-          </Route>
-        </Switch>
+          {/* </Route> */}
+        {/* </Switch> */}
        </div>
-       </Router>
+       {/* </Router> */}
+
     </>
   );
 }
